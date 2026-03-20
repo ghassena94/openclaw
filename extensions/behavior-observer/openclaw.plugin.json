@@ -1,0 +1,77 @@
+{
+  "id": "behavior-observer",
+  "name": "Behavior Observer",
+  "description": "Learns repeated action sequences from OpenClaw-observable events and proposes approval-gated automation drafts.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "default": true
+      },
+      "analyzerIntervalSec": {
+        "type": "number",
+        "default": 3600
+      },
+      "episodeGapMinutes": {
+        "type": "number",
+        "default": 45
+      },
+      "minSupport": {
+        "type": "number",
+        "default": 3
+      },
+      "minConfidence": {
+        "type": "number",
+        "default": 0.6
+      },
+      "maxPatternLength": {
+        "type": "number",
+        "default": 4
+      },
+      "retentionDaysRaw": {
+        "type": "number",
+        "default": 30
+      },
+      "retentionDaysActions": {
+        "type": "number",
+        "default": 90
+      }
+    }
+  },
+  "uiHints": {
+    "enabled": {
+      "label": "Enabled",
+      "help": "Turn behavior observation and background analysis on or off."
+    },
+    "analyzerIntervalSec": {
+      "label": "Analyzer Interval",
+      "help": "How often the analyzer service runs, in seconds."
+    },
+    "episodeGapMinutes": {
+      "label": "Episode Gap",
+      "help": "Split action streams into new episodes when the gap exceeds this many minutes."
+    },
+    "minSupport": {
+      "label": "Min Support",
+      "help": "Minimum number of episodes required before a pattern is considered strong."
+    },
+    "minConfidence": {
+      "label": "Min Confidence",
+      "help": "Minimum prefix confidence required before creating a proposal."
+    },
+    "maxPatternLength": {
+      "label": "Max Pattern Length",
+      "help": "Maximum ordered sequence length to mine."
+    },
+    "retentionDaysRaw": {
+      "label": "Raw Event Retention",
+      "help": "How many days minimized raw hook events are kept."
+    },
+    "retentionDaysActions": {
+      "label": "Action Retention",
+      "help": "How many days normalized actions are kept for pattern mining."
+    }
+  }
+}
